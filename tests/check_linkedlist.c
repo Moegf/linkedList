@@ -86,6 +86,7 @@ START_TEST(test_linked_list)
     clear(list);
     clear(copied);
 }
+END_TEST
 
 Suite *linkedListSuite()
 {

@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -c -Wall
 PROFILE_FLAGS = -fprofile-arcs -ftest-coverage
-TST_LIBS = -lcheck
+TST_LIBS = -lcheck -lm -lpthread -lrt -lsubunit
 COV_LIBS = -coverage
 SRC_DIR= src
 TST_DIR= tests
