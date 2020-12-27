@@ -1,0 +1,6 @@
+/.vscode
+*.o
+*.gcno
+*.gcda
+*.html
+check_linkedlist_test
