@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -c -Wall
 PROFILE_FLAGS = -fprofile-arcs -ftest-coverage
-ifeq ($(OS),Linux)
+ifeq ($(OS),Windows_NT)
 	TST_LIBS = -lcheck -lm -lpthread -lrt -lsubunit
 else
 	TST_LIBS = -lcheck
