@@ -44,6 +44,16 @@ linkedList *fromArray(int array[], int length)
     return list;
 }
 
+linkedList *generateHelper(int (*generator)(int), int length, int index){
+    return index < length - 1?
+        create(generator(index), generateHelper(generator, length, index + 1)):
+        leaf(generator(index));
+}
+
+linkedList *generate(int (*generator)(int), int length){
+    return generateHelper(generator, length, 0);
+}
+
 int length(linkedList *list)
 {
     int nextLength;

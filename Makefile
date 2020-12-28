@@ -1,11 +1,13 @@
 CC = gcc
 CFLAGS = -c -Wall
 PROFILE_FLAGS = -fprofile-arcs -ftest-coverage
-ifeq ($(OS),Windows_NT)
-	TST_LIBS = -lcheck -lm -lpthread -lrt -lsubunit
-else
+
+ifeq ($(OS),Darwin)
 	TST_LIBS = -lcheck
+else
+	TST_LIBS = -lcheck -lm -lpthread -lrt -lsubunit
 endif
+
 COV_LIBS = -coverage
 SRC_DIR= src
 TST_DIR= tests

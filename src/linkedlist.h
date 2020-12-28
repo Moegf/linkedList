@@ -9,6 +9,7 @@ linkedList *create(int value, linkedList *next);
 linkedList *leaf(int value);
 linkedList *copy(linkedList *list);
 linkedList *fromArray(int array[], int size);
+linkedList *generate(int (*generator)(int), int length);
 int length(linkedList *list);
 void append(linkedList *list, int value);
 int get(linkedList *list, int i);

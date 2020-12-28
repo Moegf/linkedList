@@ -23,6 +23,12 @@ int square(int a)
     return a * a;
 }
 
+int fibonacci(int n) {
+    return n < 2 ?
+        1:
+        fibonacci(n - 1) + fibonacci(n - 2);
+}
+
 START_TEST(test_linked_list)
 {
     int l = 5;
@@ -54,6 +60,8 @@ START_TEST(test_linked_list)
     ck_assert_int_eq(get(list, 42), 0);
     ck_assert_int_eq(contains(list, 3), true);
     ck_assert_int_eq(contains(list, 9), false);
+
+    ck_assert_int_eq(equals(generate(fibonacci, 4), create(1, create(1, (create(2, leaf(3)))))), true);
 
     ck_assert_int_eq(foldr(list, sum, 0), 15);
     ck_assert_int_eq(foldr(list, difference, 0), 3);
